@@ -1,28 +1,37 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
-import './globals.css'
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import App from "@/components/ContactUsForm";
+import Testimonials from "@/components/testimonial";
+import FeaturesSection from "@/components/Services";
+import GetApp from "@/components/GetApp";
+import Navigation from "@/components/Navigation";
 
 export const metadata: Metadata = {
-  title: 'Travel',
-  description: 'Travel UI/UX App for Camping',
-}
+  title: "AIWARELAB",
+  description: "AIWARELAB",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        <main className="relative overflow-hidden">
-          {children}
-        </main>
+        {/* <Navbar /> */}
+        <Navigation />
+        <main className="relative overflow-hidden">{children}</main>
+
+        <FeaturesSection />
+        <Testimonials />
+        <GetApp />
+        <App />
         <Footer />
       </body>
     </html>
-  )
+  );
 }
