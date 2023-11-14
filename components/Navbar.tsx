@@ -13,8 +13,8 @@ const Navbar = ({ toggle }: { toggle: () => void }) => {
       nextSection.scrollIntoView({ behavior: "smooth" });
     }
   };
-  const handleScrollToPricing = () => {
-    const nextSection = document.getElementById("scrollToPrice");
+  const handleScrollToTestimonials = () => {
+    const nextSection = document.getElementById("scrollToTestimonials");
 
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: "smooth" });
@@ -45,7 +45,7 @@ const Navbar = ({ toggle }: { toggle: () => void }) => {
         <Logo />
         <button
           type="button"
-          className="inline-flex items-center md:hidden"
+          className="inline-flex items-center md:hidden bg-green-400 rounded-full p-1"
           onClick={toggle}
         >
           <svg xmlns="" width="40" height="40" viewBox="0 0 24 24">
@@ -75,28 +75,36 @@ const Navbar = ({ toggle }: { toggle: () => void }) => {
               // containerStyles="text-white rounded-full mt-10 "
             ></CustomButton>
           </li>
-          <li className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold">
+          {/* <li className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold">
             <CustomButton
               title="Pricing"
               handleClick={handleScrollToPricing}
               // containerStyles="text-white rounded-full mt-10 "
             ></CustomButton>
-            {/* <Link href="/contacts">
-                  <p>Pricing</p>
-                </Link> */}
-          </li>
+          </li> */}
           <li className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold">
-            {/* <Link href="/contacts">
-                  <p>Contact Us</p>
-                </Link> */}
             <CustomButton
-              title="Contact Us"
-              handleClick={handleScrollToContactUSForm}
+              title="Testimonials"
+              handleClick={handleScrollToTestimonials}
               // containerStyles="text-white rounded-full mt-10 "
             ></CustomButton>
           </li>
+          {/* <li className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold">
+            <CustomButton
+              title="Testimonials"
+              handleClick={handleScrollToServices}
+              // containerStyles="text-white rounded-full mt-10 "
+            ></CustomButton>
+          </li> */}
         </ul>
-        <div className="hidden md:block">{/* <Button /> */}</div>
+        <div className="hidden md:block">
+          {/* <Button /> */}
+          <CustomButton
+            title="Let's Talk"
+            handleClick={handleScrollToContactUSForm}
+            containerStyles="bg-green-500 border border-green-300 py-2 px-4 rounded-full transition duration-300 hover:bg-green-500 hover:text-white hover:border-green-500"
+          ></CustomButton>
+        </div>
       </div>
       {/* </div> */}
       {/* </div> */}

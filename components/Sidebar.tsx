@@ -16,8 +16,8 @@ const Sidebar = ({
       nextSection.scrollIntoView({ behavior: "smooth" });
     }
   };
-  const handleScrollToPricing = () => {
-    const nextSection = document.getElementById("scrollToPrice");
+  const handleScrollToTestimonials = () => {
+    const nextSection = document.getElementById("scrollToTestimonials");
 
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: "smooth" });
@@ -44,6 +44,7 @@ const Sidebar = ({
         style={{
           opacity: `${isOpen ? "1" : "0"}`,
           top: ` ${isOpen ? "0" : "-100%"}`,
+          zIndex: "100",
         }}
       >
         <button className="absolute right-0 p-5" onClick={toggle}>
@@ -61,7 +62,7 @@ const Sidebar = ({
           </svg>
         </button>
 
-        <ul className="sidebar-nav text-center leading-relaxed text-xl">
+        <ul className="sidebar-nav text-center leading-relaxed text-xl flex flex-col gap-5">
           <li
             onClick={toggle}
             className="bg-green-500 border border-green-300 py-2 px-4 rounded-full"
@@ -70,11 +71,8 @@ const Sidebar = ({
               title="Home"
               handleClick={handleScrollToHome}
             ></CustomButton>
-            {/* <Link href="/about" onClick={toggle} className="py-2">
-              <p>Home</p>
-            </Link> */}
           </li>
-          <li
+          {/* <li
             onClick={toggle}
             className="bg-green-500 border border-green-300 py-2 px-4 rounded-full"
           >
@@ -82,18 +80,11 @@ const Sidebar = ({
               title="Pricing"
               handleClick={handleScrollToPricing}
             ></CustomButton>
-
-            {/* <Link href="/services" onClick={toggle} className="py-2">
-              <p>Pricing</p>
-            </Link> */}
-          </li>
+          </li> */}
           <li
             onClick={toggle}
             className="bg-green-500 border border-green-300 py-2 px-4 rounded-full"
           >
-            {/* <Link href="/contacts" onClick={toggle} className="py-2">
-              <p>Services</p>
-            </Link> */}
             <CustomButton
               title="Services"
               handleClick={handleScrollToServices}
@@ -103,14 +94,20 @@ const Sidebar = ({
             onClick={toggle}
             className="bg-green-500 border border-green-300 py-2 px-4 rounded-full"
           >
-            {/* <Link href="/contacts" onClick={toggle} className="py-2">
-              <p>Contact Us</p>
-            </Link> */}
+            <CustomButton
+              title="Testimonials"
+              handleClick={handleScrollToTestimonials}
+            ></CustomButton>
+          </li>
+          {/* <li
+            onClick={toggle}
+            className="bg-green-500 border border-green-300 py-2 px-4 rounded-full"
+          >
             <CustomButton
               title="Contact Us"
               handleClick={handleScrollToContactUSForm}
             ></CustomButton>
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>

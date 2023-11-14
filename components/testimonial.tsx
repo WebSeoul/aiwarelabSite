@@ -2,7 +2,7 @@ import React from "react";
 
 const Testimonials: React.FC = () => {
   return (
-    <section className="bg-gray-100 py-16 px-8">
+    <section className="bg-gray-100 py-16 px-8" id="scrollToTestimonials">
       <div className="container mx-auto text-center">
         <p className="text-xl font-bold mb-8 text-green-00">
           Customer Comments

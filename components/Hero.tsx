@@ -22,7 +22,7 @@ const Hero = () => {
   return (
     <section
       // className="max-container padding-container flex flex-col w-8/12 gap-20 py-10 pb-32 md:gap-28 lg:py-5 xl:flex-row"
-      className="flexCenter w-full flex-col px-8 py-8 mHero"
+      className="flexCenter w-full flex-col px-8 py-8 "
       id="scrollToHome"
     >
       {/* <div className="hero-map" /> */}

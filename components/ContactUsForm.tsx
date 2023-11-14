@@ -94,7 +94,7 @@ function ContactForm() {
         </select>
         <button
           type="submit"
-          className="pContactUsSubmitButton px-10 mt-8 py-2 bg-blue-100 text-gray-50 font-light rounded-md text-lg flex flex-row items-center"
+          className="pContactUsSubmitButton px-10 mt-8 py-2 bg-blue-100 text-gray-50 font-light rounded-md text-lg flex flex-row items-center justify-center"
         >
           Submit
         </button>
