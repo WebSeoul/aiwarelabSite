@@ -1,0 +1,141 @@
+Error:
+PS D:\trav\travel_ui_ux> git push -u origin main 
+Enter passphrase for key '/c/Users/Shane/.ssh/id_ed25519': 
+ERROR: Permission to adrianhajdin/travel_ui_ux.git denied to WebSeoul.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Sol: git remote set-url origin https://github.com/WebSeoul/aiwarelab-deploy.git
+
+//Working
+
+"use client";
+import { NAV_LINKS } from "@/constants";
+import Image from "next/image";
+import Link from "next/link";
+import CustomButton from "@/components/CustomButton";
+
+const Navbar = () => {
+  const handleScroll = () => {
+    const nextSection = document.getElementById("get-in-touch");
+
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  return (
+    <div className="flexBetween max-container padding-container relative z-30 py-5">
+      {/* <nav className="flexBetween max-container padding-container relative z-30 py-5 "> */}
+      <Link href="/">
+        <Image src="/bot4.svg" alt="logo" width={74} height={29} />
+      </Link>
+      <ul className="hidden h-full gap-12 lg:flex bg-white-200">
+        {NAV_LINKS.map((link) => (
+          <Link
+            href={link.href}
+            key={link.key}
+            // onClick={handleScroll}
+            className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold"
+          >
+            {link.label}
+          </Link>
+        ))}
+      </ul>
+      <CustomButton
+        title="HI"
+        handleClick={handleScroll}
+        containerStyles="bg-primary-blue text-white rounded-full mt-10"
+      ></CustomButton>
+      <div className="lg:flexCenter hidden">
+        <button className="bg-green-500 border border-green-300 py-2 px-4 rounded-full ">
+          Let's Talk
+        </button>
+      </div>
+      <Image
+        src="menu.svg"
+        alt="menu"
+        width={32}
+        height={32}
+        className="inline-block cursor-pointer lg:hidden"
+      />
+      {/* </nav> */}
+    </div>
+  );
+};
+
+const NavBar = () => (
+  <header className="w-full  absolute z-10">
+    <nav className="max-w-[1440px] mx-auto flex justify-between items-center sm:px-16 px-6 py-4 bg-transparent">
+      <Link href="/" className="flex justify-center items-center">
+        <Image
+          src="/logo.svg"
+          alt="logo"
+          width={118}
+          height={18}
+          className="object-contain"
+        />
+      </Link>
+
+      <CustomButton
+        title="Sign in"
+        btnType="button"
+        containerStyles="text-primary-blue rounded-full bg-white min-w-[130px]"
+      />
+    </nav>
+  </header>
+);
+
+export default Navbar;
+
+
+
+
+
+//Default
+
+import { NAV_LINKS } from "@/constants";
+import Image from "next/image";
+import Link from "next/link";
+import Button from "./Button";
+
+import App from "@/components/ContactUsForm";
+
+const Navbar = () => {
+  return (
+    <nav className="flexBetween max-container padding-container relative z-30 py-5 ">
+      <Link href="/">
+        <Image src="/bot4.svg" alt="logo" width={74} height={29} />
+      </Link>
+
+      <ul className="hidden h-full gap-12 lg:flex">
+        {NAV_LINKS.map((link) => (
+          <Link
+            href={link.href}
+            key={link.key}
+            className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold"
+          >
+            {link.label}
+          </Link>
+        ))}
+      </ul>
+
+      <div className="lg:flexCenter hidden">
+        <button className="bg-green-500 border border-green-300 py-2 px-4 rounded-full ">
+          Let's Talk
+        </button>
+      </div>
+
+      <Image
+        src="menu.svg"
+        alt="menu"
+        width={32}
+        height={32}
+        className="inline-block cursor-pointer lg:hidden"
+      />
+    </nav>
+  );
+};
+
+export default Navbar;
